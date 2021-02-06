@@ -44,15 +44,8 @@ else()
   )
 endif()
 
-target_link_libraries(QtBaseProject PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt5::Core WidgetManager ModuleManager )
-
-#foreach( qtmodule Core )
-#  find_package( Qt5${qtmodule} REQUIRED )
-#  set( QT_LIBS_NEEDED ${QT_LIBS_NEEDED} Qt5::${qtmodule} )
-#  message( STATUS "Found ${qtmodule}" )
-#endforeach( qtmodule )
-#set( CMAKE_AUTOMOC ON ) # Assume this line is needed almost always.
-#set( CMAKE_AUTOUIC ON ) # Assume this line is needed almost always.
 
 add_subdirectory( Core )
 add_subdirectory( UI )
+
+target_link_libraries(QtBaseProject PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt5::Core Core UI )
