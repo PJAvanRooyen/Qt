@@ -8,7 +8,7 @@ set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # QtCreator supports the following variables for Android, which are identical to qmake Android variables.
@@ -47,5 +47,6 @@ endif()
 
 add_subdirectory( Core )
 add_subdirectory( UI )
+add_subdirectory( Examples )
 
-target_link_libraries(QtBaseProject PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt5::Core Core UI )
+target_link_libraries(QtBaseProject PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt5::Core Core UI Examples)
