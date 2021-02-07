@@ -1,16 +1,16 @@
+#include "Core/ApplicationController/ApplicationController.h"
 #include "Core/ModuleManager/ModuleManager.h"
 
-#include "mainwindow.h"
 #include <QApplication>
 
 int main(int argc, char *argv[]) {
   QApplication a(argc, argv);
-  MainWindow w;
-  w.show();
 
-  ::Core::ModuleManager::ModuleManager *moduleManager =
-      new Core::ModuleManager::ModuleManager();
-  delete moduleManager;
+  Core::ApplicationController::ApplicationController application =
+      Core::ApplicationController::ApplicationController();
+
+  Core::ModuleManager::ModuleManager moduleManager =
+      Core::ModuleManager::ModuleManager();
 
   return a.exec();
 }

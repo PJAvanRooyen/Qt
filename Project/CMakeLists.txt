@@ -31,16 +31,10 @@ find_package(Qt5 COMPONENTS Core REQUIRED)
 if(ANDROID)
   add_library(QtBaseProject SHARED
     main.cpp
-    mainwindow.cpp
-    mainwindow.h
-    mainwindow.ui
   )
 else()
   add_executable(QtBaseProject
     main.cpp
-    mainwindow.cpp
-    mainwindow.h
-    mainwindow.ui
   )
 endif()
 
